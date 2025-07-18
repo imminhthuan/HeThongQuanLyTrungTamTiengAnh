@@ -1,4 +1,7 @@
 
+using HeThongQuanLyTrungTamTiengAnh.Model;
+using Microsoft.EntityFrameworkCore;
+
 namespace HeThongQuanLyTrungTamTiengAnh
 {
     public class Program
@@ -6,6 +9,11 @@ namespace HeThongQuanLyTrungTamTiengAnh
         public static void Main(string[] args)
         {
             var builder = WebApplication.CreateBuilder(args);
+
+            // cau hinh Database
+            var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
+
+            builder.Services.AddDbContext<ApplicationDbContext>(options => options.UseSqlServer(connectionString));
 
             // Add services to the container.
 

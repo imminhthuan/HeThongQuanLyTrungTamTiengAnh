@@ -6,6 +6,7 @@ namespace HeThongQuanLyTrungTamTiengAnh.Model
     public class Courses
     {
         [Key]
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int CourseId { get; set; }
 
         [Required]
@@ -24,5 +25,6 @@ namespace HeThongQuanLyTrungTamTiengAnh.Model
         public DateTime CreatedAt { get; set; } = DateTime.Now;
 
         public ICollection<Classes> Classess { get; set; }
+        public ICollection<Payments> Payments { get; set; }
     }
 }

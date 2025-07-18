@@ -6,6 +6,7 @@ namespace HeThongQuanLyTrungTamTiengAnh.Model
     public class StudentClasses
     {
         [Key]
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int StudentClassesId { get; set; }
 
         public int StudentId { get; set; }

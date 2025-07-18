@@ -6,6 +6,7 @@ namespace HeThongQuanLyTrungTamTiengAnh.Model
     public class Students
     {
         [Key]
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int StudentId { get; set; }
 
         [Required]
@@ -34,9 +35,11 @@ namespace HeThongQuanLyTrungTamTiengAnh.Model
         public string Address { get; set; }
 
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-
         public DateTime CreatedAt { get; set; } = DateTime.Now;
 
         public ICollection<StudentClasses> StudentClasses { get; set; }
+        public ICollection<Attendance> Attendances { get; set; }
+        public ICollection<Payments> Payments { get; set; }
+
     }
 }

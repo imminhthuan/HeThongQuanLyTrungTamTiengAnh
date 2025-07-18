@@ -6,6 +6,7 @@ namespace HeThongQuanLyTrungTamTiengAnh.Model
     public class Classes
     {
         [Key]
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int ClasseId { get; set; }
 
         [Required]
@@ -14,7 +15,6 @@ namespace HeThongQuanLyTrungTamTiengAnh.Model
 
         [DataType(DataType.Date)]
         public DateTime StarDate { get; set; }
-
 
         [DataType(DataType.Date)]
         public DateTime EndDate { get; set; }
@@ -33,7 +33,6 @@ namespace HeThongQuanLyTrungTamTiengAnh.Model
         public Teachers Teachers { get; set; }
 
         public ICollection<StudentClasses> StudentClasses { get; set; }
-
-
+        public ICollection<Attendance> Attendances { get; set; }
     }
 }
