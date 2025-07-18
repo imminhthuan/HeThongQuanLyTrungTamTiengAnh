@@ -9,14 +9,14 @@ namespace HeThongQuanLyTrungTamTiengAnh.Model
               
         }
 
-        public DbSet<Classes> classes { get; set; }
-        public DbSet<Students> students { get; set; }
-        public DbSet<StudentClasses> studentClasses { get; set; }
-        public DbSet<Users> users { get; set; }
-        public DbSet<Teachers> teachers { get; set; }
-        public DbSet<Payments> payments { get; set; }
-        public DbSet<Attendance> attendances { get; set; }
-        public DbSet<Courses> courses { get; set; }
+        public DbSet<Classes> Classe { get; set; }
+        public DbSet<Students> Student { get; set; }
+        public DbSet<StudentClasses> StudentClasse { get; set; }
+        public DbSet<Users> User { get; set; }
+        public DbSet<Teachers> Teacher { get; set; }
+        public DbSet<Payments> Payment { get; set; }
+        public DbSet<Attendance> Attendance { get; set; }
+        public DbSet<Courses> Course { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {

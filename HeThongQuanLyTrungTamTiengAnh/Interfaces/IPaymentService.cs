@@ -1,6 +1,13 @@
-﻿namespace HeThongQuanLyTrungTamTiengAnh.Interfaces
+﻿using HeThongQuanLyTrungTamTiengAnh.Model;
+
+namespace HeThongQuanLyTrungTamTiengAnh.Interfaces
 {
-    public class IPaymentService
+    public interface IPaymentService
     {
+        Task<Payments> GetPaymentByIdAsync(int id);
+        Task<IEnumerable<Payments>> GetAllPaymentAsync();
+        Task<Payments> CreatePaymentAsync(Payments payments);
+        Task UpdatePaymentAsync(Payments payments);
+        Task DeletePaymentAsync(int id);
     }
 }

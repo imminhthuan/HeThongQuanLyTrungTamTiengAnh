@@ -1,5 +1,7 @@
 
+using HeThongQuanLyTrungTamTiengAnh.Interfaces;
 using HeThongQuanLyTrungTamTiengAnh.Model;
+using HeThongQuanLyTrungTamTiengAnh.Repositories;
 using Microsoft.EntityFrameworkCore;
 
 namespace HeThongQuanLyTrungTamTiengAnh
@@ -16,6 +18,8 @@ namespace HeThongQuanLyTrungTamTiengAnh
             builder.Services.AddDbContext<ApplicationDbContext>(options => options.UseSqlServer(connectionString));
 
             // Add services to the container.
+
+            builder.Services.AddScoped<IUserRepository, UserRepository>();
 
             builder.Services.AddControllers();
             // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle

@@ -1,6 +1,13 @@
-﻿namespace HeThongQuanLyTrungTamTiengAnh.Interfaces
+﻿using HeThongQuanLyTrungTamTiengAnh.Model;
+
+namespace HeThongQuanLyTrungTamTiengAnh.Interfaces
 {
-    public class IClassesRepository
+    public interface IClassesRepository
     {
+        Task<Classes> GetClassesByIdAsync(int id);
+        Task<IEnumerable<Classes>> GetAllClassesAsync();
+        Task AddClassesAsync(Classes classes);
+        Task UpdateClassesAsync(Classes classes);
+        Task DeleteClassesAsync(int id);
     }
 }
