@@ -15,6 +15,9 @@ namespace HeThongQuanLyTrungTamTiengAnh.Model
 
         public int ClasseId { get; set; }
         [ForeignKey("ClasseId")]
+
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+        public DateTime EnrolledAt { get; set; } = DateTime.Now;
         public Classes Classes { get; set; }
     }
 }

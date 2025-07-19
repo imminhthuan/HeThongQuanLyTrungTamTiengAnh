@@ -13,6 +13,7 @@ namespace HeThongQuanLyTrungTamTiengAnh.Model
         [Column(TypeName = "decimal(10, 2)")]
         public decimal Amount { get; set; }
 
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public DateTime PaidDate { get; set; } = DateTime.Now;
 
         [MaxLength(255)]
