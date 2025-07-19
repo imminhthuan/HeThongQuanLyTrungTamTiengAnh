@@ -23,27 +23,35 @@ namespace HeThongQuanLyTrungTamTiengAnh.Repositories
             return await _context.User.ToListAsync();
         }
 
-        public async Task<int> AddUserAsync(Users user)
+
+        // Tìm email dưới db 
+        public async Task<Users> GetUserByEmailAsync(string email)
+        {
+            return await _context.User.FirstOrDefaultAsync(u => u.Email == email);
+        }
+
+        public async Task<Users> AddUserAsync(Users user)
         {
             _context.User.Add(user);
-            return await _context.SaveChangesAsync();
+            await _context.SaveChangesAsync();
+            return user;
         }
 
-        public async Task<int> UpdateUserAsync(Users user)
+        public async Task<bool> UpdateUserAsync(Users user)
         {
             _context.User.Update(user);
-            return await _context.SaveChangesAsync();
+            return await _context.SaveChangesAsync() > 0;
         }
 
-        public async Task<int> DeleteUserAsync(int id)
+        public async Task<bool> DeleteUserAsync(int id)
         {
             var user = await _context.User.FindAsync(id);
             if(user == null)
             {
-                return 0;
+                return false;
             }
             _context.User.Remove(user);
-            return await _context.SaveChangesAsync();
+            return await _context.SaveChangesAsync() > 0;
         }
     }
 }

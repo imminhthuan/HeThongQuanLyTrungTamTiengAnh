@@ -6,8 +6,9 @@ namespace HeThongQuanLyTrungTamTiengAnh.Interfaces
     {
         Task<Users> GetUserByIdAsync(int id);
         Task<IEnumerable<Users>> GetAllUserAsync();
-        Task<int> AddUserAsync(Users users);
-        Task<int> UpdateUserAsync(Users users);
-        Task<int> DeleteUserAsync(int id);
+        Task<Users> GetUserByEmailAsync(string email);
+        Task<Users> AddUserAsync(Users users);
+        Task<bool> UpdateUserAsync(Users users);
+        Task<bool> DeleteUserAsync(int id);
     }
 }

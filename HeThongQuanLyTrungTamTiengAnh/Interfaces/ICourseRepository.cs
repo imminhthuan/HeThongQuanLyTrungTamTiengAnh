@@ -6,8 +6,8 @@ namespace HeThongQuanLyTrungTamTiengAnh.Interfaces
     {
         Task<Courses> GetCourseByIdAsync(int id);
         Task<IEnumerable<Courses>> GetAllCourseAsync();
-        Task AddCourseAsync(Courses courses);
-        Task UpdateCourseAsync(Courses courses);
-        Task DeleteCoureAsync(int id);
+        Task<int> AddCourseAsync(Courses courses);
+        Task<int> UpdateCourseAsync(Courses courses);
+        Task<int> DeleteCourseAsync(int id);
     }
 }

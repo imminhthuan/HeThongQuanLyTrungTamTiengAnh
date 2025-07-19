@@ -1,10 +1,11 @@
-﻿using HeThongQuanLyTrungTamTiengAnh.Model;
+﻿using HeThongQuanLyTrungTamTiengAnh.Interfaces;
+using HeThongQuanLyTrungTamTiengAnh.Model;
 using Microsoft.EntityFrameworkCore;
 using System.Net.WebSockets;
 
 namespace HeThongQuanLyTrungTamTiengAnh.Repositories
 {
-    public class CourseRepository
+    public class CourseRepository : ICourseRepository
     {
         private readonly ApplicationDbContext _context;
 

@@ -1,7 +1,9 @@
 
 using HeThongQuanLyTrungTamTiengAnh.Interfaces;
+using HeThongQuanLyTrungTamTiengAnh.Mappings;
 using HeThongQuanLyTrungTamTiengAnh.Model;
 using HeThongQuanLyTrungTamTiengAnh.Repositories;
+using HeThongQuanLyTrungTamTiengAnh.Services;
 using Microsoft.EntityFrameworkCore;
 
 namespace HeThongQuanLyTrungTamTiengAnh
@@ -17,9 +19,34 @@ namespace HeThongQuanLyTrungTamTiengAnh
 
             builder.Services.AddDbContext<ApplicationDbContext>(options => options.UseSqlServer(connectionString));
 
-            // Add services to the container.
 
+            // Dang ky Repository
             builder.Services.AddScoped<IUserRepository, UserRepository>();
+            builder.Services.AddScoped<ITeacherRepository, TeacherRepository>();
+            builder.Services.AddScoped<IStudentRepository, StudentRepository>();
+            builder.Services.AddScoped<IStudentClassesRepository, StudentClassesRepository>();
+            builder.Services.AddScoped<IPaymentRepository, PaymentRepository>();
+            builder.Services.AddScoped<ICourseRepository, CourseRepository>();
+            builder.Services.AddScoped<IClassesRepository, ClassesRepository>();
+            builder.Services.AddScoped<IAttendanceRepository, AttendanceRepository>();
+
+            // Dang ky Service
+            builder.Services.AddScoped<IUserService, UserService>();
+            builder.Services.AddScoped<ITeacherService, TeacherService>();
+            builder.Services.AddScoped<IStudentService, StudentService>();
+            builder.Services.AddScoped<IStudentClassesService, StudentClassesService>();
+            builder.Services.AddScoped<IPaymentService, PaymentService>();
+            builder.Services.AddScoped<ICourseService, CourseService>();
+            builder.Services.AddScoped<IClassesService, ClassesService>();
+            builder.Services.AddScoped<IAttendanceService, AttendanceService>();
+
+
+            // AutoMapper 
+
+            builder.Services.AddAutoMapper(typeof(MappingProfile));
+
+
+            // Add services to the container.
 
             builder.Services.AddControllers();
             // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
