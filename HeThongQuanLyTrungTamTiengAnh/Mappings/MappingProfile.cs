@@ -35,6 +35,10 @@ namespace HeThongQuanLyTrungTamTiengAnh.Mappings
                 .ForMember(dest => dest.Student, opt => opt.MapFrom(src => src.Students))
                 .ForMember(dest => dest.Classe, opt => opt.MapFrom(src => src.Classes));
             CreateMap<StudentClassesCreateDto, StudentClasses>();
+            CreateMap<StudentClassesUpdateDto, StudentClasses>();
+
+
+
         }
     }
 }

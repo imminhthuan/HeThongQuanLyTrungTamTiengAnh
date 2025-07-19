@@ -11,9 +11,7 @@ namespace HeThongQuanLyTrungTamTiengAnh.DTOs
         public DateTime StarDate { get; set; }
         public DateTime EndDate { get; set; }
         public string Schedule { get; set; }
-
         public int CourseId { get; set; }
-
         public int TeacherId { get; set; }
         public CourseResponseDto Course { get; set; }
         public TeacherResponseDto Teacher { get; set; }

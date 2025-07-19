@@ -29,7 +29,5 @@ namespace HeThongQuanLyTrungTamTiengAnh.Model
         public DateTime CreatedAt { get; set; } = DateTime.Now;
 
         public ICollection<Classes> Classess {  get; set; }
-
-
     }
 }

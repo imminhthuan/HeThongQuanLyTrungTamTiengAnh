@@ -1,13 +1,14 @@
-﻿using HeThongQuanLyTrungTamTiengAnh.Model;
+﻿using HeThongQuanLyTrungTamTiengAnh.DTOs;
+using HeThongQuanLyTrungTamTiengAnh.Model;
 
 namespace HeThongQuanLyTrungTamTiengAnh.Interfaces
 {
     public interface ITeacherService
     {
-        Task<Teachers> GetTeacherByIdAsync(int id);
-        Task<IEnumerable<Teachers>> getAllTeacherAsync();
-        Task<Teachers> CreateTeacherAsync(Teachers teachers);
-        Task UpdateTeacherAsync(Teachers teachers);
-        Task deleteTeacherAsync(int id);
+        Task<TeacherResponseDto> GetTeacherByIdAsync(int id);
+        Task<IEnumerable<TeacherResponseDto>> GetAllTeacherAsync();
+        Task<TeacherResponseDto> CreateTeacherAsync(TeacherCreateDto teacherCreateDto);
+        Task<bool> UpdateTeacherAsync(TeacherUpdateDto teacherUpdateDto);
+        Task<bool> DeleteTeacherAsync(int id);
     }
 }

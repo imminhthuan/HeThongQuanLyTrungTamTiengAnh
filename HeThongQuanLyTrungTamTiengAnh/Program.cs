@@ -42,7 +42,6 @@ namespace HeThongQuanLyTrungTamTiengAnh
 
 
             // AutoMapper 
-
             builder.Services.AddAutoMapper(typeof(MappingProfile));
 
 

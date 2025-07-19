@@ -23,7 +23,6 @@ namespace HeThongQuanLyTrungTamTiengAnh.Repositories
             return await _context.User.ToListAsync();
         }
 
-
         // Tìm email dưới db 
         public async Task<Users> GetUserByEmailAsync(string email)
         {

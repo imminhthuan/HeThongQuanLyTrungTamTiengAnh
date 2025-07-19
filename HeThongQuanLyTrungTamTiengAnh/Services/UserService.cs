@@ -49,7 +49,7 @@ namespace HeThongQuanLyTrungTamTiengAnh.Services
 
         public async Task<UserResponseDto> CreateUserAsync(UserCreateDto userCreateDto)
         {
-            // logic kiem tra Email có trung lặp
+            // logic kiem tra Email có trùng lặp
             var existingUser = await _userRepository.GetUserByEmailAsync(userCreateDto.Email);
             if(existingUser != null)
             {
@@ -69,12 +69,26 @@ namespace HeThongQuanLyTrungTamTiengAnh.Services
 
         public async Task<bool> UpdateUserAsync(UserUpdateDto usersUpdateDto)
         {
+            var userUpdate = await _userRepository.GetUserByIdAsync(usersUpdateDto.UserId);
+            if(userUpdate == null)
+            {
+                return false;
+            }
 
+            // Ánh xạ các trường từ UserUpdateDto sang Users entity hiện có
+            _mapper.Map(usersUpdateDto, userUpdate);
+            return await _userRepository.UpdateUserAsync(userUpdate);
         }
 
         public async Task<bool> DeleteUserAsync(int id)
         {
+            var userDelete = await _userRepository.GetUserByIdAsync(id);
+            if(userDelete == null)
+            {
+                return false;
+            }
 
+            return await _userRepository.DeleteUserAsync(id);
         }
     }
 }
