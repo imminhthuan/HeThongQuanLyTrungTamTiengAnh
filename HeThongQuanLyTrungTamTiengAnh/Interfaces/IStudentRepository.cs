@@ -6,8 +6,9 @@ namespace HeThongQuanLyTrungTamTiengAnh.Interfaces
     {
         Task<Students> GetStudentByIdAsync(int id);
         Task<IEnumerable<Students>> GetAllStudentAsync();
-        Task<int> AddStudentAsync(Students students);
-        Task<int> UpdateStudentAsync(Students students);
-        Task<int> DeleteStudentAsync(int id);
+        Task<Students> GetStudentEmailAsync(string email);
+        Task<Students> AddStudentAsync(Students students);
+        Task<bool> UpdateStudentAsync(Students students);
+        Task<bool> DeleteStudentAsync(int id);
     }
 }
