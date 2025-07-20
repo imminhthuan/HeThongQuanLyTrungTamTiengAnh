@@ -6,8 +6,8 @@ namespace HeThongQuanLyTrungTamTiengAnh.Interfaces
     {
         Task<Payments> GetPaymentByIdAsync(int id);
         Task<IEnumerable<Payments>> GetAllPaymentAsync();
-        Task<int> AddPaymentAsync(Payments payments);
-        Task<int> UpdatePaymentAsync(Payments payments);
-        Task<int> DeletePaymentAsync(int id);
+        Task<Payments> AddPaymentAsync(Payments payments);
+        Task<bool> UpdatePaymentAsync(Payments payments);
+        Task<bool> DeletePaymentAsync(int id);
     }
 }

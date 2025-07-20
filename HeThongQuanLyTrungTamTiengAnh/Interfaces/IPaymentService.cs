@@ -1,13 +1,14 @@
-﻿using HeThongQuanLyTrungTamTiengAnh.Model;
+﻿using HeThongQuanLyTrungTamTiengAnh.DTOs;
+using HeThongQuanLyTrungTamTiengAnh.Model;
 
 namespace HeThongQuanLyTrungTamTiengAnh.Interfaces
 {
     public interface IPaymentService
     {
-        Task<Payments> GetPaymentByIdAsync(int id);
-        Task<IEnumerable<Payments>> GetAllPaymentAsync();
-        Task<Payments> CreatePaymentAsync(Payments payments);
-        Task UpdatePaymentAsync(Payments payments);
-        Task DeletePaymentAsync(int id);
+        Task<PaymentResponseDto> GetPaymentByIdAsync(int id);
+        Task<IEnumerable<PaymentResponseDto>> GetAllPaymentAsync();
+        Task<PaymentResponseDto> CreatePaymentAsync(PaymentsCreateDto paymentsCreateDto);
+        Task<bool> UpdatePaymentAsync(PaymentUpdateDto paymentUpdateDto);
+        Task<bool> DeletePaymentAsync(int id);
     }
 }

@@ -59,6 +59,7 @@ namespace HeThongQuanLyTrungTamTiengAnh.Mappings
                 .ForMember(dest => dest.CreatedAt, opt => opt.Ignore());
             CreateMap<CourseUpdateDto, Courses>();
 
+
         }
     }
 }

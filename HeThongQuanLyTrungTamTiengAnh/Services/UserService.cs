@@ -19,7 +19,7 @@ namespace HeThongQuanLyTrungTamTiengAnh.Services
 
 
         // Băm mật khẩu sử dụng thuật toán BCrypt
-        private string HashPassword(string password)
+        private static string HashPassword(string password)
         {
             return BCrypt.Net.BCrypt.HashPassword(password, workFactor: 12);
         }

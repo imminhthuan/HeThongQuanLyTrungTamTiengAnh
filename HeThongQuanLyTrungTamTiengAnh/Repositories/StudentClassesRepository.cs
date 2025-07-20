@@ -24,27 +24,28 @@ namespace HeThongQuanLyTrungTamTiengAnh.Repositories
             return await _context.StudentClasse.ToListAsync();
         }
 
-        public async Task<int> AddStudentClassesAsync(StudentClasses studentClasses)
+        public async Task<StudentClasses> AddStudentClassesAsync(StudentClasses studentClasses)
         {
             _context.StudentClasse.Add(studentClasses);
-            return await _context.SaveChangesAsync();
+            await _context.SaveChangesAsync();
+            return studentClasses;
         }
 
-        public async Task<int> UpdateStudentClassesAsync(StudentClasses studentClasses)
+        public async Task<bool> UpdateStudentClassesAsync(StudentClasses studentClasses)
         {
             _context.StudentClasse.Update(studentClasses);
-            return await _context.SaveChangesAsync();
+            return await _context.SaveChangesAsync() > 0;
         }
 
-        public async Task<int> DeleteStudentClassesAsync(int id)
+        public async Task<bool> DeleteStudentClassesAsync(int id)
         {
             var studentclasses = await _context.StudentClasse.FindAsync(id);
             if(studentclasses == null)
             {
-                return 0;
+                return false;
             }
             _context.StudentClasse.Remove(studentclasses);
-            return await _context.SaveChangesAsync();
+            return await _context.SaveChangesAsync() > 0;
         }
     }
 }

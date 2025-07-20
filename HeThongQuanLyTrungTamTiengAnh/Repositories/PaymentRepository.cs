@@ -23,27 +23,28 @@ namespace HeThongQuanLyTrungTamTiengAnh.Repositories
             return await _context.Payment.ToListAsync();
         }
 
-        public async Task<int> AddPaymentAsync(Payments payments)
+        public async Task<Payments> AddPaymentAsync(Payments payments)
         {
             _context.Payment.Add(payments);
-            return await _context.SaveChangesAsync();
+            await _context.SaveChangesAsync();
+            return payments;
         }
 
-        public async Task<int> UpdatePaymentAsync(Payments payments)
+        public async Task<bool> UpdatePaymentAsync(Payments payments)
         {
             _context.Payment.Update(payments);
-            return await _context.SaveChangesAsync();
+            return await _context.SaveChangesAsync() > 0;
         }
 
-        public async Task<int> DeletePaymentAsync(int id)
+        public async Task<bool> DeletePaymentAsync(int id)
         {
             var payment = await _context.Payment.FindAsync(id);
             if(payment == null)
             {
-                return 0;
+                return false;
             }
             _context.Payment.Remove(payment);
-            return await _context.SaveChangesAsync();
+            return await _context.SaveChangesAsync() > 0;
         }
     }
 }
