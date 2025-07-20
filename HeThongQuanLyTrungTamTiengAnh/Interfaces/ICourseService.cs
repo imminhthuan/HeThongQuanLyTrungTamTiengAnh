@@ -1,13 +1,14 @@
-﻿using HeThongQuanLyTrungTamTiengAnh.Model;
+﻿using HeThongQuanLyTrungTamTiengAnh.DTOs;
+using HeThongQuanLyTrungTamTiengAnh.Model;
 
 namespace HeThongQuanLyTrungTamTiengAnh.Interfaces
 {
     public interface ICourseService
     {
-        Task<Courses> GetCourseByIdAsync(int id);
-        Task<IEnumerable<Courses>> GetAllCourseAsync();
-        Task<Courses> CreateCourseAsync(Courses courses);
-        Task UpdateCourseAsync(Courses course);
-        Task DeleteCourseAsync(int id);
+        Task<CourseResponseDto> GetCourseByIdAsync(int id);
+        Task<IEnumerable<CourseResponseDto>> GetAllCourseAsync();
+        Task<CourseResponseDto> CreateCourseAsync(CourseCreateDto courseCreateDto);
+        Task<bool> UpdateCourseAsync(CourseUpdateDto courseUpdateDto);
+        Task<bool> DeleteCourseAsync(int id);
     }
 }

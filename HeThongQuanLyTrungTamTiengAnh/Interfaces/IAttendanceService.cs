@@ -1,13 +1,14 @@
-﻿using HeThongQuanLyTrungTamTiengAnh.Model;
+﻿using HeThongQuanLyTrungTamTiengAnh.DTOs;
+using HeThongQuanLyTrungTamTiengAnh.Model;
 
 namespace HeThongQuanLyTrungTamTiengAnh.Interfaces
 {
     public interface IAttendanceService
     {
-        Task<Attendance> GetAttendanceByIdAsync(int id);
-        Task<IEnumerable<Attendance>> GetAllAttendanceAsync();
-        Task<Attendance> CreateAttendanceAsync(Attendance attendance);
-        Task UpdateAttendanceAsync(Attendance attendance);
-        Task DeleteAttendanceAsync(int id);
+        Task<AttendanceResponseDto> GetAttendanceByIdAsync(int id);
+        Task<IEnumerable<AttendanceResponseDto>> GetAllAttendanceAsync();
+        Task<AttendanceResponseDto> CreateAttendanceAsync(AttendanceCreateDto attendanceCreateDto);
+        Task<bool> UpdateAttendanceAsync(AttendanceUpdateDto attendanceUpdateDto);
+        Task<bool> DeleteAttendanceAsync(int id);
     }
 }

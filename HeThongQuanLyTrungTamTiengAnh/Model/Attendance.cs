@@ -17,11 +17,11 @@ namespace HeThongQuanLyTrungTamTiengAnh.Model
 
         public int StudentId { get; set; }
         [ForeignKey("StudentId")]
-        public Students Student { get; set; }
+        public Students Students { get; set; }
 
         public int ClassId { get; set; }
         [ForeignKey("ClassId")]
-        public Classes Classes { get; set; }
+        public Classes Classess { get; set; }
 
     }
 }
