@@ -92,7 +92,7 @@ namespace HeThongQuanLyTrungTamTiengAnh
             // Configure the HTTP request pipeline.
             if (app.Environment.IsDevelopment())
             {
-                app.UseDeveloperExceptionPage();  // Su dung Developer Exception Page trong moi truong phat trien xem loi chi tiet
+                app.UseDeveloperExceptionPage();  // Su dung Developer Exception Page trong moi truong phat trien xem Lỗi chi tiet
 
                 app.UseSwagger();
                 app.UseSwaggerUI();
